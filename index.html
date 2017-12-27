@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,14 +9,43 @@
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Oswald" rel="stylesheet">
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- MAIN CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="app.css" />
 </head>
 <body>
     
+    <div class="container">
+        <h1 class="display-3"><i class="fa fa-money" aria-hidden="true"></i> Whos_paying</h1>
+        <hr class="my-4">
+        <div class="row">
+
+            <div class="applicant_container">
+                <h2>Who pays the bill?</h2>
+                <div class="input_container">
+                    <input type="text" id="applicant_input" placeholder="Enter volunteer's name">
+                    <span id="add_applicant"><i class="fa fa-plus" aria-hidden="true"></i> Add</span>
+                </div>
+            </div><!-- //applicant_container END -->
+            <div class="results_container hidden">
+                <div class="applicant_list">
+                    <h5>The have no choice volunteers</h5>
+                    <div class="applicant_list_wrapper">
+
+                    </div>
+                </div>
+            </div><!-- //results_container END -->
+            <div class="button_container">
+
+            </div><!-- //button_container END  -->
+
+        </div><!-- //row END -->
+    </div><!-- //container END  -->
+
 </body>
 <!-- BOOTSTRAP -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <!-- MAIN JAVASCRIPT -->
 <script type="text/javascript" src="app.js"></script>
 </html>
