@@ -5,6 +5,20 @@
         this.add_volunteer();
     };
 
+    this.show_list = function() {
+        var el_parent = document.querySelector('.applicant_list_wrapper');
+        var output = '';
+
+        for (let i = 0; i < volunteer_array.length; i++) {
+            output += `<span class="name_tag" data-id="${i}"> ${volunteer_array[i]}</span>`;
+        }
+
+        el_parent.innerHTML = '';
+        el_parent.insertAdjacentHTML('afterbegin', output);
+        // call the delete function
+        delete_volunteer();
+    };// show_list END
+
     this.add_volunteer = function() {
         
         function generate_list(input) {
@@ -21,22 +35,7 @@
                 alert('You cann\'t have two volunteer with same name');
                 input.value = '';
             }
-
-            console.log(volunteer_array);
         };// generate_list END
-
-        function show_list() {
-            var el_parent = document.querySelector('.applicant_list_wrapper');
-            var output = '';
-
-            for (let i = 0; i < volunteer_array.length; i++) {
-                output += `<span class="name_tag" data-id=""> ${volunteer_array[i]}</span>`;
-            }
-
-            el_parent.innerHTML = '';
-            el_parent.insertAdjacentHTML('afterbegin', output);
-
-        };// show_list END
 
         var add_btn = document.querySelector('#add_applicant');
         add_btn.addEventListener('click',function() {
@@ -51,6 +50,24 @@
         }
         return false;
     };// check_valid END
+
+    this.delete_volunteer = function() {
+        var el_item = document.querySelectorAll('.name_tag');
+
+        function remove_it(element) {
+            var data_attr = parseInt(element.getAttribute('data-id'));
+            volunteer_array.splice(data_attr, 1);
+
+            // call the show list function
+            show_list();
+        };
+
+        for (let i = 0; i < el_item.length; i++) {
+            el_item[i].addEventListener('click', function(e) {
+                remove_it(this);
+            });  
+        };
+    };// delete_volunteer END
 
     this.init();
 })();
