@@ -10,9 +10,10 @@
         function generate_list(input) {
             var value = input.value;
 
-            if (this.check_valid(value)) {
-                volunteer_array.push(value);
+            if (this.check_valid(value.toLowerCase())) {
+                volunteer_array.push(value.toLowerCase());
                 input.value = '';
+                show_list();
             } else if(value === '') {
                 alert('You must enter an name');
                 input.value = '';
@@ -23,6 +24,19 @@
 
             console.log(volunteer_array);
         };// generate_list END
+
+        function show_list() {
+            var el_parent = document.querySelector('.applicant_list_wrapper');
+            var output = '';
+
+            for (let i = 0; i < volunteer_array.length; i++) {
+                output += `<span class="name_tag" data-id=""> ${volunteer_array[i]}</span>`;
+            }
+
+            el_parent.innerHTML = '';
+            el_parent.insertAdjacentHTML('afterbegin', output);
+
+        };// show_list END
 
         var add_btn = document.querySelector('#add_applicant');
         add_btn.addEventListener('click',function() {
