@@ -55,8 +55,10 @@ input:focus {
 }
 
 .input_container span {
-    background: #d9d9d9;
+    background: #2ecc71;
     border-radius: 50px;
+    box-shadow: 1px 1.4px rgba(0, 0, 0, 0.438);
+    color: #fff;
     cursor: pointer;
     font-size: 10px;
     padding: 11px;
@@ -88,8 +90,9 @@ input:focus {
 }
 
 .button_container div {
-    background: #27ae60;
+    background: #e67e22;
     border-radius: 10px;
+    box-shadow: 1px 1.4px rgba(0, 0, 0, 0.438);
     color: #fff;
     cursor: pointer;
     display: block;

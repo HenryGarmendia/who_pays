@@ -69,5 +69,16 @@
         };
     };// delete_volunteer END
 
+    this.random_user = function() {
+        var show_results = document.querySelector('#show_results');
+
+        show_results.addEventListener('click', function() {
+            if (volunteer_array > 1) {
+                
+            }
+        });
+        
+    };// random_user END
+
     this.init();
 })();
