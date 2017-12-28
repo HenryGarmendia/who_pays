@@ -12,7 +12,7 @@ h5 {
 }
 
 .hidden {
-    /* display: none; */
+    display: none;
 }
 
 .display-3 i {
@@ -57,6 +57,7 @@ input:focus {
 .input_container span {
     background: #d9d9d9;
     border-radius: 50px;
+    cursor: pointer;
     font-size: 10px;
     padding: 11px;
     position: absolute;
@@ -70,7 +71,7 @@ input:focus {
 }
 
 .applicant_list_wrapper span {
-    background: #3f51b5;
+    background: #3498db;
     border-radius: 7px;
     color: #fff;
     margin-right: 5px;
@@ -87,13 +88,57 @@ input:focus {
 }
 
 .button_container div {
-    border-radius: 27px;
-    background: #cccccc;
+    background: #27ae60;
+    border-radius: 10px;
     color: #fff;
     cursor: pointer;
     display: block;
+    letter-spacing: 1px;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 10px 15px;
     text-align: center;
-    width: 120px;
+    width: 160px;
+}
+
+/* ===================================
+        APPLICANT CONTAINER
+=====================================*/
+
+.results_container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.results_container h3 {
+    color: darkred;
+    font-size: 300%;
+    margin-bottom: 30px;
+}
+
+
+.run_again + .start_again {
+    margin-left: .5em;
+}
+
+.run_again, .start_again {
+    background: #27ae60;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    display: inline;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    width: 140px;
+}
+
+.run_again {
+    background: #27ae60;
+}
+
+.start_again {
+    background: #3498db;
 }

@@ -27,25 +27,34 @@
                     <input type="text" id="applicant_input" placeholder="Enter volunteer's name">
                     <span id="add_applicant"><i class="fa fa-plus" aria-hidden="true"></i> Add</span>
                 </div>
-                <div class="results_container hidden">
-                    <div class="applicant_list">
-                        <h5>NO choice volunteers</h5>
-                        <div class="applicant_list_wrapper">
-                            <span>Eduardo</span>
-                        </div>
+                <div class="applicant_list">
+                    <h5>NO choice volunteers</h5>
+                    <div class="applicant_list_wrapper">
+                        <span>Eduardo</span>
                     </div>
-                </div><!-- //results_container END -->
+                </div>
                 <div class="button_container">
                     <div id="show_results">Get the unlucky</div>
                 </div><!-- //button_container END  -->
             </div><!-- //applicant_container END -->
 
+            <div class="results_container hidden">
+                <h2>The Looser is:</h2>
+                <div class="result">
+                    <h3>John</h3>
+                </div>
+                <div class="results_action">
+                    <div class="run_again">Run it again</div>
+                    <div class="start_again">Start again</div>
+                </div><!-- //results_action END -->
+            </div><!-- //results_container END -->
+
         </div><!-- //row END -->
     </div><!-- //container END  -->
 
 </body>
-<!-- BOOTSTRAP -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<!-- JQUERY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- MAIN JAVASCRIPT -->
 <script type="text/javascript" src="app.js"></script>
 </html>
