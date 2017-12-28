@@ -3,6 +3,7 @@
 
     this.init = function() {
         this.add_volunteer();
+        this.random_user();
     };
 
     this.show_list = function() {
@@ -20,7 +21,6 @@
     };// show_list END
 
     this.add_volunteer = function() {
-        
         function generate_list(input) {
             var value = input.value;
 
@@ -53,7 +53,6 @@
 
     this.delete_volunteer = function() {
         var el_item = document.querySelectorAll('.name_tag');
-
         function remove_it(element) {
             var data_attr = parseInt(element.getAttribute('data-id'));
             volunteer_array.splice(data_attr, 1);
@@ -71,14 +70,31 @@
 
     this.random_user = function() {
         var show_results = document.querySelector('#show_results');
+        function show_sucker() {
+            var results_container   = document.querySelector('.results_container');    
+            var applicant_container = document.querySelector('.applicant_container'); 
 
-        show_results.addEventListener('click', function() {
-            if (volunteer_array > 1) {
-                
-            }
+            console.log(results_container);
+            
+            applicant_container.className += ' hidden';
+            results_container.className = 'results_container';
+            show_random_user();
+        };
+
+        show_results.addEventListener('click', function(e) {
+            if (volunteer_array.length > 1) {
+                show_sucker();
+            };
         });
-        
     };// random_user END
+
+    this.show_random_user = function() {
+        var result_div = document.querySelector('.result');
+        var rand_num   = volunteer_array[Math.floor(Math.random() * volunteer_array.length)];
+
+        result_div.innerHTML = '';
+        result_div.insertAdjacentHTML('afterbegin', `<h3>${rand_num}</h3>`);
+    };// show_random_user END
 
     this.init();
 })();
