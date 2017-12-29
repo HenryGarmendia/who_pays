@@ -4,6 +4,8 @@
     this.init = function() {
         this.add_volunteer();
         this.random_user();
+        this.run_again();
+        this.start_again();
     };
 
     this.show_list = function() {
@@ -21,6 +23,8 @@
     };// show_list END
 
     this.add_volunteer = function() {
+        var error_box = document.querySelector('.error_box');
+
         function generate_list(input) {
             var value = input.value;
 
@@ -29,10 +33,20 @@
                 input.value = '';
                 show_list();
             } else if(value === '') {
-                alert('You must enter an name');
+                error_box.innerHTML = 'You must enter a name: e.g. Boso';
+                error_box.className += ' error_box_op'
+                setTimeout(() => {
+                    error_box.className = 'error_box';
+                    error_box.innerHTML = '';
+                }, 3000);
                 input.value = '';
             } else {
-                alert('You cann\'t have two volunteer with same name');
+                error_box.innerHTML = 'You cann\'t have two volunteers with same name';
+                error_box.className += ' error_box_op'                
+                setTimeout(() => {
+                    error_box.className = 'error_box';                    
+                    error_box.innerHTML = '';
+                }, 3000);
                 input.value = '';
             }
         };// generate_list END
@@ -73,8 +87,6 @@
         function show_sucker() {
             var results_container   = document.querySelector('.results_container');    
             var applicant_container = document.querySelector('.applicant_container'); 
-
-            console.log(results_container);
             
             applicant_container.className += ' hidden';
             results_container.className = 'results_container';
@@ -95,6 +107,30 @@
         result_div.innerHTML = '';
         result_div.insertAdjacentHTML('afterbegin', `<h3>${rand_num}</h3>`);
     };// show_random_user END
+
+    this.run_again = function() {
+        var run_again = document.querySelector('.run_again');
+
+        run_again.addEventListener('click', function(e) {
+            show_random_user();
+        });
+    };// run_again END
+
+    this.start_again = function() {
+        var start_again = document.querySelector('.start_again');
+
+        start_again.addEventListener('click', function() {
+            var results_container   = document.querySelector('.results_container');    
+            var applicant_container = document.querySelector('.applicant_container');
+            var el_parent_wrapper = document.querySelector('.applicant_list_wrapper');
+
+            applicant_container.className = 'applicant_container';
+            results_container.className = 'results_container hidden';
+            el_parent_wrapper.innerHTML = '';
+
+            volunteer_array = [];
+        });
+    };// start_again END
 
     this.init();
 })();
